@@ -1,0 +1,74 @@
+<style type="text/css">
+    body {
+        color: white;
+    }
+    h1 {
+        margin-top: 35px;;
+        color: orange;
+        text-align: center;
+        font-size: 56px;;
+        /*text-shadow: 3px 3px 0px white, -3px 3px 0px white, 3px -3px 0px white, -3px -3px 0px white;;*/
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;;
+        color: white;
+    }
+    body {
+        background-color: #670067;
+    }
+    ul {
+        text-align: center;
+        list-style-type: none;
+    }
+    li {
+        font-size: 21px;;
+        margin-bottom: 21px;
+
+    }
+</style>
+<div class="row" ng-init="init()">
+    <div class="span12">
+        <div class="logo">
+           <h1>ENDURANCE!</h1>
+            <h2>Can you stand the knowledge?</h2>
+        </div>
+
+        <div class="row">
+            <div class="input-append input-large span8 offset1">
+                <input class="span8" ng-model="user.name" type="text" style="font-size: 17px; padding: 11px 7px" placeholder="Your Name"/>
+                <a href="" class="btn btn-warning btn-large" ng-click="startPlaying()" ng-enabled="startButtonEnabled">
+                    {{ startButtonText || 'Start Playing!' }}
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div style="color: white; text-align: center; margin-bottom: 14px;">
+                <small>The Queensland Museum Data Challenge!</small>
+            </div>
+        </div>
+
+
+        <div class="leaderboard" style="margin-top: 28px">
+            <h2>Leaderboard</h2>
+            <ul >
+                <li ng-repeat="user in model.leaderboard">
+
+                    <div>
+                        #{{ $index + 1 }} <b>{{ user.name || "Anonymous" }}</b>
+                        - Score: <span >{{ user.highScore }}</span>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
